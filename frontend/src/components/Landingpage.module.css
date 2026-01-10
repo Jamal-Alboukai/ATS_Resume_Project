@@ -1,0 +1,574 @@
+.lpPage {
+  --lp-bg: #f7f9fc;
+  --lp-surface: #ffffff;
+  --lp-card: #ffffff;
+  --lp-border: #e5e7eb;
+  --lp-ink: #0f172a;
+  --lp-muted: #64748b;
+  --lp-accent: #8b5cf6;
+  --lp-accent-2: #14b8a6;
+  --lp-radius-lg: 24px;
+  --lp-radius-md: 16px;
+  --lp-radius-sm: 10px;
+  --lp-shadow: 0 16px 50px rgba(15, 23, 42, 0.08);
+  --lp-font: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.08), transparent 26%),
+    radial-gradient(circle at 80% 0%, rgba(20, 184, 166, 0.08), transparent 28%),
+    var(--lp-bg);
+  color: var(--lp-ink);
+  font-family: var(--lp-font);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.lpBackdrop {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.06), rgba(20, 184, 166, 0.08));
+  pointer-events: none;
+}
+
+.lpShell {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.lpNav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.92));
+  border-bottom: 1px solid var(--lp-border);
+  backdrop-filter: blur(16px);
+}
+
+.lpNavShell {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lpBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--lp-ink);
+}
+
+.lpBrandMark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(140deg, var(--lp-accent), #6d28d9);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 28px rgba(139, 92, 246, 0.22);
+}
+
+.lpBrandTitle {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 16px;
+}
+
+.lpBrandTagline {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--lp-muted);
+  letter-spacing: 0.04em;
+}
+
+.lpNavLinks {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.lpNavLink {
+  text-decoration: none;
+  color: var(--lp-muted);
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: var(--lp-radius-sm);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.lpNavLink:hover {
+  color: var(--lp-ink);
+  background: var(--lp-card);
+}
+
+.lpNavActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 8px;
+}
+
+.lpPrimaryBtn,
+.lpGhostBtn,
+.lpInlineBtn {
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  border-radius: var(--lp-radius-sm);
+}
+
+.lpPrimaryBtn {
+  background: linear-gradient(135deg, var(--lp-accent), var(--lp-accent-2));
+  color: #ffffff;
+  padding: 12px 16px;
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.12);
+}
+
+.lpPrimaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(17, 24, 39, 0.16);
+}
+
+.lpGhostBtn {
+  background: transparent;
+  color: var(--lp-ink);
+  border: 1px solid var(--lp-border);
+  padding: 11px 14px;
+}
+
+.lpGhostBtn:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  color: var(--lp-ink);
+}
+
+.lpMenuBtn {
+  display: none;
+  background: var(--lp-card);
+  border: 1px solid var(--lp-border);
+  color: var(--lp-ink);
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.lpHero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  padding: 80px 0 60px;
+}
+
+.lpHeroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.lpKicker {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--lp-muted);
+  font-weight: 700;
+}
+
+.lpHeadline {
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+  color: var(--lp-ink);
+}
+
+.lpSubhead {
+  color: var(--lp-muted);
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+.lpHeroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.lpBadgeRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.lpStat {
+  padding: 12px 14px;
+  border-radius: var(--lp-radius-sm);
+  background: var(--lp-card);
+  border: 1px solid var(--lp-border);
+}
+
+.lpStatLabel {
+  color: var(--lp-muted);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+.lpStatValue {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.lpHeroCard {
+  background: var(--lp-card);
+  border: 1px solid var(--lp-border);
+  border-radius: var(--lp-radius-lg);
+  padding: 22px;
+  box-shadow: var(--lp-shadow);
+}
+
+.lpHeroCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lpCardLabel {
+  color: var(--lp-muted);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.lpCardTitle {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.lpPill {
+  background: rgba(139, 92, 246, 0.12);
+  color: var(--lp-accent);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.lpScoreRow {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lpScoreValue {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.lpScoreMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.lpScoreChip {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(124, 58, 237, 0.06);
+  border: 1px solid var(--lp-border);
+  color: var(--lp-ink);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.lpCardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.lpMetric {
+  border: 1px solid var(--lp-border);
+  border-radius: var(--lp-radius-md);
+  padding: 14px;
+  background: #ffffff;
+}
+
+.lpMetricValue {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.lpMetricHint {
+  color: var(--lp-muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.lpProgress {
+  margin: 16px 0 10px;
+  width: 100%;
+  background: #e2e8f0;
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+  border: 1px solid var(--lp-border);
+}
+
+.lpProgressBar {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--lp-accent), var(--lp-accent-2));
+}
+
+.lpCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.lpFootNote {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--lp-muted);
+  font-weight: 700;
+}
+
+.lpInlineBtn {
+  background: transparent;
+  color: var(--lp-accent);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  padding: 9px 12px;
+}
+
+.lpInlineBtn:hover {
+  transform: translateY(-1px);
+  color: var(--lp-ink);
+}
+
+.lpFeatures {
+  padding: 70px 0 40px;
+}
+
+.lpSectionHeader {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lpSectionTitle {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.lpSectionSub {
+  color: var(--lp-muted);
+  line-height: 1.6;
+}
+
+.lpFeatureGrid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.lpFeatureCard {
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-border);
+  border-radius: var(--lp-radius-md);
+  padding: 18px;
+  box-shadow: var(--lp-shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.lpFeatureCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+.lpIconBadge {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(139, 92, 246, 0.12);
+  color: var(--lp-accent);
+  display: grid;
+  place-items: center;
+  margin-bottom: 10px;
+  border: 1px solid rgba(139, 92, 246, 0.28);
+}
+
+.lpFeatureTitle {
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.lpFeatureCopy {
+  color: var(--lp-muted);
+  line-height: 1.6;
+}
+
+.lpWorkflow {
+  padding: 40px 0 40px;
+}
+
+.lpWorkflowCard {
+  background: var(--lp-card);
+  border: 1px solid var(--lp-border);
+  border-radius: var(--lp-radius-lg);
+  padding: 24px;
+  box-shadow: var(--lp-shadow);
+}
+
+.lpStepList {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.lpStepItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--lp-radius-sm);
+  border: 1px solid var(--lp-border);
+  background: #ffffff;
+}
+
+.lpStepDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--lp-accent), var(--lp-accent-2));
+  box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.12);
+}
+
+.lpStepText {
+  font-weight: 700;
+  color: var(--lp-ink);
+}
+
+.lpInlineCta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.lpCTA {
+  padding: 40px 0 70px;
+}
+
+.lpCTAContent {
+  background: linear-gradient(120deg, rgba(139, 92, 246, 0.12), rgba(20, 184, 166, 0.12));
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: var(--lp-radius-lg);
+  padding: 24px;
+  box-shadow: var(--lp-shadow);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.lpCtaActions {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.lpFooter {
+  padding: 22px 0 30px;
+  border-top: 1px solid var(--lp-border);
+  background: rgba(6, 11, 23, 0.9);
+  position: relative;
+  z-index: 1;
+}
+
+.lpFooterText {
+  text-align: center;
+  color: var(--lp-muted);
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .lpNavLinks {
+    position: absolute;
+    inset: 60px 12px auto 12px;
+    padding: 12px;
+    background: rgba(6, 11, 23, 0.96);
+    border: 1px solid var(--lp-border);
+    border-radius: var(--lp-radius-md);
+    box-shadow: var(--lp-shadow);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    display: none;
+  }
+
+  .lpNavLinksOpen {
+    display: flex;
+  }
+
+  .lpNavActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lpMenuBtn {
+    display: inline-flex;
+  }
+
+  .lpNavLink {
+    width: 100%;
+    text-align: left;
+  }
+
+  .lpHero {
+    padding-top: 56px;
+  }
+}
+
+@media (max-width: 640px) {
+  .lpHeroCard {
+    padding: 18px;
+  }
+
+  .lpCardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lpBadgeRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}

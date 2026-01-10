@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome to the ATS Resume Analyzer</h2>
+
+{% if current_user.is_authenticated %}
+<p>You are logged in as <strong>{{ current_user.email }}</strong> ({{ current_user.role }})</p>
+<p>Your frontend (React/Vite) can now call the protected APIs at <code>/api/... </code></p>
+{% else %}
+<p>Please <a href="{{ url_for('login') }}">login</a> or <a href="{{ url_for('register') }}">register</a> to use the system.</p>
+{% endif %}
+{% endblock %}
